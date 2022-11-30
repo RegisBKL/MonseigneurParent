@@ -25,9 +25,9 @@ public final class Constants {
         // Ces valeurs constantes correspondent aux numeros
         // de ports de vos controleurs de moteur dans le reseau CAN
         public static final int leftleader = 1;
-        public static final int leftfollower = 2;
+        //public static final int leftfollower = 2;
         public static final int rightleader = 3;
-        public static final int rightfollower = 4;
+        //public static final int rightfollower = 4;
     }
 
     public static final class GrabberConstants{
@@ -35,7 +35,7 @@ public final class Constants {
         // Mis pour les tests avec les controleurs de moteur VictorSPX.
         // Ces valeurs constantes correspondent aux numeros
         // de ports de vos controleurs de moteur dans le reseau CAN
-        public static final int grabbermotor = 6;
+        public static final int grabbermotor = 3;
 
         //vitesse de rotation du moteur: valeur arbitraire mais
         //que vous pouvez modifier pour vos propres besoins
@@ -44,60 +44,6 @@ public final class Constants {
         //Arreter le moteur
         public static final double krepos = 0.0;
     }
-
-    public static final class ChuteConstants{
-
-        // Mis pour les tests avec les controleurs de moteur VictorSPX.
-        // Ces valeurs constantes correspondent aux numeros
-        // de ports de vos controleurs de moteur dans le reseau CAN
-        public static final int chutemotor = 5;
-
-        //vitesse de rotation du moteur: valeur arbitraire mais
-        //que vous pouvez modifier pour vos propres besoins
-        public static final double kvitesseRotation = 0.5;
-
-        //Arreter le moteur
-        public static final double krepos = 0.0;
-    }
-
-    public static final class BackShooterConstants{
-
-        // Mis pour les tests avec les controleurs de moteur VictorSPX.
-        // Ces valeurs constantes correspondent aux numeros
-        // de ports de vos controleurs de moteur dans le reseau CAN
-        public static final int backshootermotor = 7;
-
-        //vitesse de rotation du moteur: valeur arbitraire mais
-        //que vous pouvez modifier pour vos propres besoins
-        public static final double backShooterSpeed = 0.5;
-
-        //Arreter le moteur
-        public static final double krepos = 0.0;
-    }
-    public static final class FrontShooterConstants{
-
-        // Mis pour les tests avec les controleurs de moteur VictorSPX.
-        // Ces valeurs constantes correspondent aux numeros
-        // de ports de vos controleurs de moteur dans le reseau CAN
-        public static final int frontshootermotor = 8;
-
-        //vitesse de rotation du moteur: valeur arbitraire mais
-        //que vous pouvez modifier pour vos propres besoins
-        public static final double kvitesseRotation = 0.5;
-
-        //Arreter le moteur
-        public static final double krepos = 0.0;
-    }
-
-    public static final class LimitSwitchConstants{
-
-        // Mis pour les tests avec les controleurs de moteur VictorSPX.
-        // Ces valeurs constantes correspondent aux numeros
-        // de ports de vos controleurs de moteur dans le reseau CAN
-        public static final int limitswitchport = 0;
-
-    }
-
 
     public static final class IOConstants{
         // Numero du port USB sur lequel vous brancherez votre manette

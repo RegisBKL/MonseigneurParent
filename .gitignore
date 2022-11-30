@@ -160,3 +160,19 @@ bin/
 
 # Simulation GUI and other tools window save file
 *-window.json
+src/main/java/frc/robot/commands/AutoGroupCommand.java
+src/main/java/frc/robot/commands/AutoGroupCommand.java
+src/main/java/frc/robot/commands/AutoGroupCommand.java
+src/main/java/frc/robot/subsystems/LimitSwitch.java
+src/main/java/frc/robot/subsystems/FrontShooter.java
+src/main/java/frc/robot/subsystems/Chute.java
+src/main/java/frc/robot/commands/AutoGroupCommand.java
+src/main/java/frc/robot/commands/AutoRotationCommand.java
+src/main/java/frc/robot/commands/BackShooterAtRestCommand.java
+src/main/java/frc/robot/commands/BackShooterReverseCommand.java
+src/main/java/frc/robot/commands/ChuteAtRestCommand.java
+src/main/java/frc/robot/commands/ChuteReverseCommand.java
+src/main/java/frc/robot/commands/FrontShooterAtRestCommand.java
+src/main/java/frc/robot/commands/FrontShooterForwardCommand.java
+src/main/java/frc/robot/commands/ManuelCommand.java
+src/main/java/frc/robot/subsystems/BackShooter.java
