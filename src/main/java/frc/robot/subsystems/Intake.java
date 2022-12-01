@@ -5,15 +5,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.PWM;
-import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
-import edu.wpi.first.wpilibj.Servo;
-import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.GrabberConstants;
 
@@ -21,9 +13,7 @@ public class Intake extends SubsystemBase {
 
   /** Creates a new ExampleSubsystem. */
 
-  // Definition et declaration du moteur supplementaire et du verin
-  //private final VictorSPX m_intake_Motor = new VictorSPX(Mecanisme2Constants.kmoteurSupplementaire);
-  
+    
   private final WPI_VictorSPX m_intake_Motor = new WPI_VictorSPX(GrabberConstants.grabbermotor);
   
   // Creation d'un objet Mecanisme2
@@ -42,7 +32,7 @@ public class Intake extends SubsystemBase {
   // moteur donc il faudra faire un test, une fois votre moteur câblé
   // pour savoir determiner le sens
   public void tourneSensHoraire() {
-    //m_intake_Motor.set(ControlMode.PercentOutput, Mecanisme2Constants.kvitesseRotation);
+    
     m_intake_Motor.set(ControlMode.PercentOutput, 0.25);
   }
   // Faire tourner le moteur sens anti-horaire
@@ -50,7 +40,7 @@ public class Intake extends SubsystemBase {
   // moteur donc il faudra faire un test, une fois votre moteur câblé
   // pour savoir determiner le sens
   public void tourneSensAntiHoraire() {
-    //m_intake_Motor.set(ControlMode.PercentOutput, -Mecanisme2Constants.kvitesseRotation);
+    
     m_intake_Motor.set(ControlMode.PercentOutput, -0.25);
   }
 
@@ -59,15 +49,14 @@ public class Intake extends SubsystemBase {
   // moteur donc il faudra faire un test, une fois votre moteur câblé
   // pour savoir determiner le sens
   public void tourneAnySens(double speed) {
-    //m_intake_Motor.set(ControlMode.PercentOutput, -Mecanisme2Constants.kvitesseRotation);
+    
     m_intake_Motor.set(ControlMode.PercentOutput, speed);
   }
 
   // Mettre le moteur à l'arrêt
   public void mettreAuRepos() {
-    //m_intake_Motor.set(ControlMode.PercentOutput, Mecanisme2Constants.krepos);
+    
     m_intake_Motor.set(ControlMode.PercentOutput, 0);
-    //m_Verin2.set(true);
     
   }
 

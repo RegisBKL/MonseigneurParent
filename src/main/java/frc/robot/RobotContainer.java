@@ -13,9 +13,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.IOConstants;
 import frc.robot.commands.ArcadeDriveCommand;
-import frc.robot.commands.GrabberCommand;
+import frc.robot.commands.IntakegrabCommand;
 import frc.robot.commands.IntakeAtRestCommand;
-import frc.robot.commands.ReleaseCommand;
+import frc.robot.commands.IntakereleaseCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 
@@ -37,7 +37,7 @@ public class RobotContainer {
 
   //Declaration et definition du compressor
   //private final Compressor m_compressor = new Compressor(PneumatiqueConstants.kcompressor);
-  //m_compressor.start();
+  
   // private final ExampleCommand m_autoCommand = new
   // ExampleCommand(m_exampleSubsystem);
 
@@ -47,7 +47,8 @@ public class RobotContainer {
   public RobotContainer() {
 
     //activation du compresseurs
-        
+    //m_compressor.start();
+
     //configuration des commandes par defaut
     setDefaultCommands();
     configureButtonBindings();
@@ -62,9 +63,11 @@ public class RobotContainer {
 
    //Definition des commandes par default de chaque sous-systeme
   private void setDefaultCommands() {
+
     m_drivetrain.setDefaultCommand(new ArcadeDriveCommand(
       ()->(-1)*m_pilot.getY(), ()->m_pilot.getZ(), m_drivetrain)
       );
+
     m_intake.setDefaultCommand(new IntakeAtRestCommand(m_intake));
    
     // Configure de la correspondance entre les boutons et les commandes
@@ -82,9 +85,9 @@ public class RobotContainer {
 
    //connecter les boutons aux commandes ici
    
-   //new JoystickButton(m_pilot, 1).whileHeld(new BackShooterReverseCommand(m_backshooter));
-   new JoystickButton(m_pilot, 3).whileHeld(new GrabberCommand(m_intake));
-   new JoystickButton(m_pilot, 4).whileHeld(new ReleaseCommand(m_intake));
+   
+   new JoystickButton(m_pilot, 3).whileHeld(new IntakegrabCommand(m_intake));
+   new JoystickButton(m_pilot, 4).whileHeld(new IntakereleaseCommand(m_intake));
    
 
   }
