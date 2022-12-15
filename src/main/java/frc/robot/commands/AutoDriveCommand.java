@@ -31,8 +31,7 @@ public class AutoDriveCommand extends CommandBase {
     //m_AvanceRecule = avanceRecule;
     //m_Tourne = tourne;
     // Use addRequirements() here to declare subsystem dependencies.
-    
-
+  
     addRequirements(m_drivetrain);
   }
 

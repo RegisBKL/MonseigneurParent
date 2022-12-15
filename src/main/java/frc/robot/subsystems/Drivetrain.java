@@ -6,6 +6,8 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import com.playingwithfusion.CANVenom;
+
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -28,11 +30,11 @@ public class Drivetrain extends SubsystemBase  {
    * Commenter ici mais a activer lorsque vous aurez des moteurs Venom
    */
    
-  private final WPI_TalonSRX m_left_leaderMotor = new WPI_TalonSRX(DriveConstants.rightleader); 
+  private final CANVenom m_left_leaderMotor = new CANVenom(DriveConstants.rightleader); 
   //private final WPI_VictorSPX m_left_followerMotor = new WPI_VictorSPX(DriveConstants.rightfollower);
   //private final MotorControllerGroup m_left = new MotorControllerGroup(m_left_leaderMotor, m_left_followerMotor);
 
-  private final WPI_TalonSRX m_right_leaderMotor = new WPI_TalonSRX(DriveConstants.leftleader); 
+  private final CANVenom m_right_leaderMotor = new CANVenom(DriveConstants.leftleader); 
   //private final WPI_VictorSPX m_right_followerMotor = new WPI_VictorSPX(DriveConstants.leftfollower);
   //private final MotorControllerGroup m_right = new MotorControllerGroup(m_right_leaderMotor, m_right_followerMotor);
   
@@ -80,9 +82,9 @@ public class Drivetrain extends SubsystemBase  {
 
   //Creation d'un objet Drivetrain 
   public Drivetrain() {
-    m_left_leaderMotor.configFactoryDefault();
+  //m_left_leaderMotor.configFactoryDefault();
     //m_left_followerMotor.configFactoryDefault();
-    m_right_leaderMotor.configFactoryDefault();
+    //m_right_leaderMotor.configFactoryDefault();
     //m_right_followerMotor.configFactoryDefault();
     
     m_right_leaderMotor.setInverted(true);

@@ -32,7 +32,7 @@ public class Intake extends SubsystemBase {
   // moteur donc il faudra faire un test, une fois votre moteur câblé
   // pour savoir determiner le sens
   public void tourneSensHoraire() {
-    
+  
     m_intake_Motor.set(ControlMode.PercentOutput, 0.25);
   }
   // Faire tourner le moteur sens anti-horaire

@@ -26,7 +26,7 @@ public final class Constants {
         // de ports de vos controleurs de moteur dans le reseau CAN
         public static final int leftleader = 1;
         //public static final int leftfollower = 2;
-        public static final int rightleader = 3;
+        public static final int rightleader = 2;
         //public static final int rightfollower = 4;
     }
 
