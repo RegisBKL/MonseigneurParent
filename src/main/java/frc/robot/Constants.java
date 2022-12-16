@@ -17,25 +17,24 @@ public final class Constants {
         //Cette classe regroupe toutes les constantes
         //relatives à votre base pilotable
 
-        // Mis pour les tests avec les moteurs Venom.
-        // Ces valeurs constantes correspondent aux numeros
-        // de ports de vos controleurs de moteur dans le reseau CAN
-
-        // Mis pour les tests avec les controleurs de moteur VictorSPX.
+        // Mis pour les tests avec les controleurs de moteur TalonSRX.
         // Ces valeurs constantes correspondent aux numeros
         // de ports de vos controleurs de moteur dans le reseau CAN
         public static final int leftleader = 1;
-        //public static final int leftfollower = 2;
-        public static final int rightleader = 2;
-        //public static final int rightfollower = 4;
+        public static final int leftfollower = 2;
+        public static final int rightleader = 3;
+        public static final int rightfollower = 4;
     }
 
-    public static final class GrabberConstants{
+    public static final class ClimberConstants{
 
-        // Mis pour les tests avec les controleurs de moteur VictorSPX.
         // Ces valeurs constantes correspondent aux numeros
         // de ports de vos controleurs de moteur dans le reseau CAN
-        public static final int grabbermotor = 3;
+        public static final int climberLeft = 5;
+        public static final int climberRight = 6;
+
+        public static final int limitSwitchUP = 0;
+        public static final int limitSWitchDown = 1;
 
         //vitesse de rotation du moteur: valeur arbitraire mais
         //que vous pouvez modifier pour vos propres besoins
@@ -47,7 +46,8 @@ public final class Constants {
 
     public static final class IOConstants{
         // Numero du port USB sur lequel vous brancherez votre manette
-        public static final int KmanettePort = 0;
+        public static final int KmanettePilot = 0;
+        public static final int KmanetteCoPilot = 1;
     }
 
 }

@@ -13,11 +13,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.IOConstants;
 import frc.robot.commands.ArcadeDriveCommand;
-import frc.robot.commands.IntakegrabCommand;
-import frc.robot.commands.IntakeAtRestCommand;
-import frc.robot.commands.IntakereleaseCommand;
+import frc.robot.commands.ClimberUpCommand;
+import frc.robot.commands.ClimberAtRestCommand;
+import frc.robot.commands.ClimberDownCommand;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Climber;
 
 
 
@@ -30,10 +30,11 @@ import frc.robot.subsystems.Intake;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Drivetrain m_drivetrain = new Drivetrain();
-  private final Intake m_intake = new Intake();
+  private final Climber m_intake = new Climber();
   
   //Declaration et definition de la manette
-  private final Joystick m_pilot = new Joystick(IOConstants.KmanettePort);
+  private final Joystick m_pilot = new Joystick(IOConstants.KmanettePilot);
+  private final Joystick m_copilot = new Joystick(IOConstants.KmanetteCoPilot);
 
   //Declaration et definition du compressor
   //private final Compressor m_compressor = new Compressor(PneumatiqueConstants.kcompressor);
@@ -65,10 +66,10 @@ public class RobotContainer {
   private void setDefaultCommands() {
 
     m_drivetrain.setDefaultCommand(new ArcadeDriveCommand(
-      ()->(-1)*m_pilot.getY(), ()->m_pilot.getZ(), m_drivetrain)
+      ()->(-1)*m_pilot.getRawAxis(1), ()->m_pilot.getRawAxis(2), m_drivetrain)
       );
 
-    m_intake.setDefaultCommand(new IntakeAtRestCommand(m_intake));
+    m_intake.setDefaultCommand(new ClimberAtRestCommand(m_intake));
    
     // Configure de la correspondance entre les boutons et les commandes
     
@@ -86,8 +87,8 @@ public class RobotContainer {
    //connecter les boutons aux commandes ici
    
    
-   new JoystickButton(m_pilot, 3).whileHeld(new IntakegrabCommand(m_intake));
-   new JoystickButton(m_pilot, 4).whileHeld(new IntakereleaseCommand(m_intake));
+   new JoystickButton(m_pilot, 3).whileHeld(new ClimberUpCommand(m_intake));
+   new JoystickButton(m_pilot, 4).whileHeld(new ClimberDownCommand(m_intake));
    
 
   }

@@ -4,25 +4,26 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Climber;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class IntakereleaseCommand extends CommandBase {
+public class ClimberUpCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final Intake m_intake;
-  
+  private final Climber m_climber;
+  ///private final double m_speed;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public IntakereleaseCommand(Intake intake) {
-    m_intake = intake;
+  public ClimberUpCommand(Climber climber) {
+    m_climber = climber;
+    ///m_speed = speed;
     
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(m_intake);
+    addRequirements(m_climber);
   }
 
   // Called when the command is initially scheduled.
@@ -34,13 +35,17 @@ public class IntakereleaseCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_intake.tourneSensHoraire();
+    if(m_climber.isClimberUP() == true){
+      m_climber.stopClimber(); 
+    }
+    else
+    m_climber.setClimberUp();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_intake.mettreAuRepos();
+    m_climber.stopClimber();
   }
 
   // Returns true when the command should end.
